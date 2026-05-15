@@ -9,7 +9,7 @@ services:
       - "80:80"
     restart: always
     depends_on:
-      - django_container
+      - django_app
     networks:
       - notes-app-nw
 
@@ -35,7 +35,7 @@ services:
     networks:
       - notes-app-nw
 
-  db:
+  db_cont:
     image: mysql:8
     container_name: "db_cont"
     environment:
